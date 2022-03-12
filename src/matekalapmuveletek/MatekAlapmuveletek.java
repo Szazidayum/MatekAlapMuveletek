@@ -6,19 +6,26 @@ import Matek.Szorzas;
 public class MatekAlapmuveletek {
     public static Scanner scanner = new Scanner(System.in);
 
+        static int OsszDB=0;
+        static int KivDB=0;
+        static int SzorDB=0;
+        static int OsztDB=0;
+        
     public static void main(String[] args) {
         System.out.println("Szeretnél gyakrolni?");
-        System.out.print("1: igen\n2: nem\n");
+        System.out.print("1: igen\n2: nem\nÍrd be a megfelelő számot: ");
         int folytat = scanner.nextInt();
         while(!(folytat==2)){
             if (folytat==1){
                 valasztas();
             System.out.println("Szeretnél gyakrolni?");
-            System.out.println("1: igen\n2: nem");
+            System.out.println("1: igen\n2: nem\nÍrd be a megfelelő számot: ");
             folytat = scanner.nextInt();
             }else{
                 folytat=2;
-            }
+             }
+            System.out.println("Ennyiszer gyakoroltad a következő műveleteket:\nösszeadás: "+OsszDB+"\nkivonás: "+KivDB+"\nszorzás: "+SzorDB+"\nosztás: "+OsztDB);
+ 
         }
        
     }
@@ -34,12 +41,16 @@ public class MatekAlapmuveletek {
         System.out.println("Old meg a következő 10 műveletet:");
         if (valasz==1){
             osszeadas();
+            OsszDB+=1;
         }else if (valasz==2){
             kivonas();
+            KivDB=+1;
         }else if (valasz==3){
             szorzas();
+            SzorDB+=1;
         }else if (valasz==4){
             osztas();
+            OsztDB=+1;
         }
     }
     
